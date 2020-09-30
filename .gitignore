@@ -1,0 +1,6 @@
+
+*.xlsx
+*.csv
+*.tif
+data/GIS/.DS_Store
+.DS_Store
