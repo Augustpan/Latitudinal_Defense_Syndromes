@@ -180,12 +180,12 @@ rda_and_summ = function(data, var, fname) {
   evar = cbind(
     data %>% select(var_clim) %>% scale(),
     data %>% select(var_herb) %>% scale(),
-    data %>% select(origin)
+    data %>% select(origin, latitude)
   ) %>% as.data.frame()
   
   ret = rda(
     rvar ~
-      CPC1 * CPC2 * herbivory * origin,
+      origin*latitude,
     data = evar
   )
   perm <- how(nperm = 999)
